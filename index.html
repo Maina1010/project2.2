@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwiz</title>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <div class="logo"><img src="logomir.jpeg" alt="Qwiz Logo" class="logo-icon">
+            </div>
+
+            <nav class="nav-links">
+                <a href="exam.html">Exams</a>
+                <a href="#" class="active">Test Series</a>
+                <a href="book.html">Books</a>
+               <div class="dropdown">
+    <a href="#">More ▾</a>
+
+    <div class="dropdown-menu">
+        <a href="help.html">Help</a>
+        <a href="#">About Us</a>
+    </div>
+</div>
+            </nav>
+
+            <div class="nav-right">
+                <input type="text" placeholder="Search..." class="search-box">
+                <button class="btn primary">Get Started</button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <!-- LEFT TEXT -->
+            <div class="hero-text">
+
+                <h1>
+                    India's Structured Online Test series platform
+                </h1>
+
+                <p>
+                    Boost your exam preparation with Test Series for all Govt. Exams
+                </p>
+
+                <h4 class="sub-text">
+                    814+ exams covered. Which exam are you preparing for?
+                </h4>
+
+                <!-- SEARCH -->
+                <div class="search-area">
+                    <input type="text" placeholder="Search for your exam">
+                    <button>🔍</button>
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="hero-image">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="dashboard">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========== POPUP CARD ========== -->
+   <div class="popup" id="popupBox">
+    <div class="popup-content">
+        <div class="popup-left">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+        </div>
+        <div class="popup-right">
+            <p>Get all important exam updates and notifications</p>
+
+            <div class="popup-buttons">
+                <button class="btn secondary" id="laterBtn">I'll do this later</button>
+                <button class="btn primary" id="allowBtn">Allow</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="popup.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

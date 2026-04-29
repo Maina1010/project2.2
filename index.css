@@ -1,0 +1,219 @@
+/* ========== GLOBAL ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fb;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+}
+.logo-icon {
+    width: 80px;
+    margin-right: 40px;
+    height: 75px;
+
+}
+/* Nav Links */
+.nav-links a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.nav-links a.active {
+    color: #00a6ff;
+    font-weight: 500;
+}
+
+/* Right */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.primary {
+    background: #00c853;
+    color: white;
+}
+
+.secondary {
+    background: #eee;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    padding: 60px 20px;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Left Text */
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.sub-text {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Search */
+.search-area {
+    display: flex;
+    width: 100%;
+}
+
+.search-area input {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.search-area button {
+    width: 20%;
+    background: #00a6ff;
+    color: white;
+    border: none;
+}
+
+/* Right Image */
+.hero-image img {
+    width: 400px;
+}
+
+/* ========== POPUP ========== */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.popup-content {
+    display: flex;
+    background: #3f8cff;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.popup-left img {
+    width: 40px;
+}
+
+.popup-right {
+    margin-left: 10px;
+}
+
+.popup-buttons {
+    margin-top: 10px;
+}
+
+.popup-buttons .btn {
+    margin-right: 5px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ========== DROPDOWN ========== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Dropdown hidden by default */
+.dropdown-menu {
+    position: absolute;
+    top: 30px;
+    left: 0;
+
+    background: white;
+    min-width: 150px;
+
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    display: none;
+    flex-direction: column;
+}
+
+/* Dropdown items */
+.dropdown-menu a {
+    padding: 10px;
+    color: #333;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background: #f5f5f5;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
