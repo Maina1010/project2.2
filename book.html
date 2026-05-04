@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Qwiz Books</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="book.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><img src="logomir.jpeg" alt="Qwiz Logo" class="logo-icon"></div>
+  <div class="nav-links">
+    <a href="index.html"><img src="home-button.png" alt="Home" class="home"></a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="header">
+  <h1>Explore Study Books 📚</h1>
+  <p>Find the best books for your exam preparation</p>
+</section>
+
+<!-- SEARCH -->
+<div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search exams...">
+    </div>
+
+    <div id="bookContainer">
+
+      <div class="book" onclick="openBook('ssc')">SSC</div>
+      <div class="book" onclick="openBook('neet')">NEET</div>
+      <div class="book" onclick="openBook('banking')">Banking</div>
+      <div class="book" onclick="openBook('railway')">Railway</div>
+
+    </div>
+
+    <p id="noResult">No Result Found ❌</p>
+
+<!-- BOOK GRID -->
+<section class="book-section">
+  <div class="book-grid">
+
+    <div class="book-card">
+      <img src="https://via.placeholder.com/150">
+      <h3>SSC Guide</h3>
+      <p>Complete preparation book</p>
+      <a href="https://store.pw.live/products/ssc-game-changer-pyq-combo-set-2025?utm_source=google&utm_medium=cpc&utm_campaign=PWG1-RG-Ecommerce-India-Google-Sales-PMAX-ROI-NonBrand-Offline-NA-SSC-19-07-2025&gad_source=1&gad_campaignid=22814206500&gbraid=0AAAAACV__W5ecHQdFnK7tU9BSiC56J9n7&gclid=CjwKCAjw-8vPBhBbEiwAoA39WmS33sSgiGcWZBVJMsAAaz-ruQQjSQHjJA0TGGaoO4x2li4fD7UobRoC2wIQAvD_BwE" target="_blank"><button>View</button></a>
+    </div>
+
+    <div class="book-card">
+      <img src="https://via.placeholder.com/150">
+      <h3>NEET Guide</h3>
+      <p>All-in-one guide</p>
+      <a href="https://arihantbooks.com/products/neet-prep-guide-physics-chemistry-biology?currency=INR&country=IN&variant=42957031800877&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=437e94f75e21&gad_source=1&gad_campaignid=22278170861&gbraid=0AAAAAo2VI7kZZNPr0sdswFR_byB0mX_qL&gclid=CjwKCAjw-8vPBhBbEiwAoA39WrqBB-5z59TbSdRUNqCeJRe4Pvitlw2AcZU1KBBVSW6mgVhP_E8iXBoCPZUQAvD_BwE" target="_blank"><button>View</button></a>
+    </div>
+
+    <div class="book-card">
+      <img src="https://via.placeholder.com/150">
+      <h3>Banking Prep</h3>
+      <p>Practice + theory</p>
+      <a href="https://toppersnotes.com/product/banking-pyq-eng?gad_source=1&gad_campaignid=17661829655&gbraid=0AAAAADmmdwI0WMCtzEgPk90j0zKIMrq2w&gclid=CjwKCAjw-8vPBhBbEiwAoA39WhDYjRWBMPtHc6-SKzLmpe7b2Z-rCKVnSGNWs7V5OtEXnXaAb3GR_hoC8aIQAvD_BwE" target="_blank"><button>View</button></a>
+    </div>
+
+    <div class="book-card">
+      <img src="https://via.placeholder.com/150">
+      <h3>Railway Exams</h3>
+      <p>Comprehensive study material</p>
+      <a href="https://toppersnotes.com/product/rrb-groupd-toppers-handwritten-notes-all-subjects-english?gad_source=1&gad_campaignid=23408633643&gbraid=0AAAAADmmdwIaNWNbMm1UsrIc3b68Bpi4j&gclid=CjwKCAjw-8vPBhBbEiwAoA39WprkHPUiRwDj2pM3C58oxWQfE5F0EGi6LRqW0aFRubviWVpoi_IU3RoCF8wQAvD_BwE" target="_blank"><button>View</button></a>
+    </div>
+
+  </div>
+</section>
+<script src="book.js"></script>
+</body>
+</html>

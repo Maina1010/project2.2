@@ -1,0 +1,358 @@
+/* ========== GLOBAL ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fb;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+}
+.logo-icon {
+    width: 80px;
+    margin-right: 40px;
+    height: 75px;
+
+}
+/* Nav Links */
+.nav-links a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.nav-links a.active {
+    color: #00a6ff;
+    font-weight: 500;
+}
+
+/* Right */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.primary {
+    background: #00c853;
+    color: white;
+}
+
+.secondary {
+    background: #eee;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    padding: 60px 20px;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Left Text */
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.sub-text {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Search */
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+/* title */
+.title {
+    margin-top: 80px;
+}
+
+/* wrapper */
+.search-wrapper {
+    position: relative;
+    margin-top: 30px;
+}
+
+/* search box */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    max-width: 95%;
+    background: white;
+    border-radius: 40px;
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* icon */
+.search-icon {
+    margin-left: 15px;
+    color: gray;
+}
+
+/* input */
+.search-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 15px;
+}
+
+/* button */
+.search-btn {
+    background: #22c55e;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* suggestions dropdown */
+#suggestions {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    margin-top: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* item */
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+.suggestion-item:hover {
+    background: #f1f5f9;
+}
+
+.suggestion-item b {
+    color: #22c55e;
+}
+
+/* Right Image */
+.hero-image img {
+    position: relative;
+    width: 300px;
+    left: 280px;
+    bottom: 280px;
+}
+
+/* ========== POPUP ========== */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.popup-content {
+    display: flex;
+    background: #3f8cff;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.popup-left img {
+    width: 40px;
+}
+
+.popup-right {
+    margin-left: 10px;
+}
+
+.popup-buttons {
+    margin-top: 10px;
+}
+
+.popup-buttons .btn {
+    margin-right: 5px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ========== DROPDOWN ========== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Dropdown hidden by default */
+.dropdown-menu {
+    position: absolute;
+    top: 30px;
+    left: 0;
+
+    background: white;
+    min-width: 150px;
+
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    display: none;
+    flex-direction: column;
+}
+
+/* Dropdown items */
+.dropdown-menu a {
+    padding: 10px;
+    color: #333;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background: #f5f5f5;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 80px auto;
+}
+
+/* Heading */
+h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+/* Search Box */
+.search-box {
+  margin: 30px 0;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 10px rgba(79,172,254,0.3);
+}
+
+/* Not Found */
+#notFound {
+  display: none;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.examList {
+    display: none;
+}
+
+.about {
+    position: relative;
+    bottom: 130px;
+    font-size: 30px;
+    color: #4e4d4d;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.about.us {
+    font-size: 18px;
+    color: #0c0404;
+    margin-top: 10px;
+    line-height: 1.7;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

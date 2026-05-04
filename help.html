@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help | Qwiz</title>
+    <link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Qwiz</div>
+    <nav>
+        <a href="index.html"><img src="home-button.png" alt="Home" class="home"></a>
+        <a href="help.html"><img src="gear.png" alt="Help" class="active"></a>
+    </nav>
+</header>
+
+<section class="container">
+    <div class="card">
+        <h2>Need Help?</h2>
+        <p>We're here for you. Send us a message anytime.</p>
+
+        <form id="contactForm">
+            <div class="input-group">
+                <input type="text" placeholder=" " required>
+                <label>Your Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder=" " required>
+                <label>Your Email</label>
+            </div>
+
+            <div class="input-group">
+                <textarea id="message" placeholder=" " required></textarea>
+                <label>Your Message</label>
+            </div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<script src="help.js"></script>
+</body>
+</html>

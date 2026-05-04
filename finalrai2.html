@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SSC Mock Test 2023</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* CONTAINER */
+.exam-container {
+  width: 90%;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.exam-header h2 {
+  color: #1e3a8a;
+}
+
+/* TIMER */
+.timer {
+  background: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* START BUTTON */
+.start-btn {
+  padding: 10px 20px;
+  background: #0ea5e9;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  background: #0284c7;
+}
+
+/* QUESTION BOX */
+.question-box {
+  background: #eff6ff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+#question {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+/* OPTIONS */
+.options li {
+  list-style: none;
+  background: #dbeafe;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.options li:hover {
+  background: #bfdbfe;
+}
+
+.options input {
+  margin-right: 10px;
+}
+
+.options li.active {
+  background: #38bdf8;
+  color: white;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background: #0ea5e9;
+}
+
+/* NAV */
+.question-nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.question-nav div {
+  background: #dbeafe;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.question-nav .answered {
+  background: #38bdf8;
+  color: white;
+}
+
+.question-nav .current {
+  border: 2px solid #1e3a8a;
+}
+
+/* RESULT */
+.result {
+  text-align: center;
+  margin-top: 20px;
+  display: none;
+  color: #1e3a8a;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="exam-container">
+
+  <div class="exam-header">
+    <h2>Railway Mock Test 2024</h2>
+    <div>
+      <button class="start-btn" onclick="startExam()">Start</button>
+      <span class="timer" id="timer">20:00</span>
+    </div>
+  </div>
+
+  <div class="question-box">
+    <div id="question"><b>Solve all 12 questions within the given time</b></div>
+    <ul class="options" id="options"></ul>
+  </div>
+
+  <div class="buttons">
+    <button class="btn" onclick="prevQuestion()">Previous</button>
+    <button class="btn" onclick="nextQuestion()">Next</button>
+    <button class="btn btn-submit" onclick="submitTest()">Submit</button>
+  </div>
+
+  <div class="question-nav" id="nav"></div>
+
+  <div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+const questions = [
+  {q: "After fertilisation, the zygote develops into what inside the ovule?", o: ["Style"," Fruit","Embryo","Ethylene"], a: 2},
+  {q: "The current through a resistor is:", o: ["Direct","Alternating","Both","None"], a: 0},
+  {q: "In which medium does the focal length of a concave mirror change?", o: [" Air","Water","t does not change","Vacuum"], a: 2},
+  {q: "If Simple Interest = ₹56 and Compound Interest = ₹72 in 2 years, find the principal.", o: ["₹42","₹250","₹300","₹350"], a: 0},
+  {q: "Which of the following ratios is smallest?", o: [" 23:48","17:39","25:50","10:36"], a: 3}
+];
+
+let current = 0;
+let answers = new Array(questions.length).fill(null);
+let time = 20 * 60;
+let timerInterval;
+let started = false;
+
+function startExam() {
+  if(started) return;
+  started = true;
+  loadQuestion();
+  startTimer();
+}
+
+/* LOAD */
+function loadQuestion() {
+  document.getElementById("question").innerText =
+    `Q${current+1}. ${questions[current].q}`;
+
+  let html = "";
+  questions[current].o.forEach((opt, i) => {
+    html += `
+    <li onclick="selectOption(${i})"
+    class="${answers[current]===i?'active':''}">
+      <input type="radio" ${answers[current]===i?'checked':''}>
+      ${opt}
+    </li>`;
+  });
+
+  document.getElementById("options").innerHTML = html;
+  updateNav();
+}
+
+/* SELECT */
+function selectOption(i) {
+  answers[current] = i;
+  loadQuestion();
+}
+
+/* NAV */
+function nextQuestion() {
+  if(current < questions.length-1) current++;
+  loadQuestion();
+}
+
+function prevQuestion() {
+  if(current > 0) current--;
+  loadQuestion();
+}
+
+function goTo(i) {
+  current = i;
+  loadQuestion();
+}
+
+function updateNav() {
+  let nav = "";
+  questions.forEach((_, i) => {
+    nav += `<div onclick="goTo(${i})"
+    class="${answers[i]!=null?'answered':''}
+    ${current===i?'current':''}">
+    ${i+1}</div>`;
+  });
+  document.getElementById("nav").innerHTML = nav;
+}
+
+/* TIMER */
+function startTimer() {
+  timerInterval = setInterval(() => {
+    let m = Math.floor(time/60);
+    let s = time%60;
+    document.getElementById("timer").innerText =
+      `${m}:${s<10?'0'+s:s}`;
+    time--;
+    if(time < 0) {
+      clearInterval(timerInterval);
+      submitTest();
+    }
+  }, 1000);
+}
+
+/* RESULT */
+function submitTest() {
+  clearInterval(timerInterval);
+
+  let score = 0;
+  questions.forEach((q,i)=>{
+    if(answers[i]===q.a) score++;
+  });
+
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").innerHTML =
+    `<h2>Test Completed</h2>
+     <h3>Score: ${score}/${questions.length}</h3>`;
+}
+
+</script>
+
+</body>
+</html>
